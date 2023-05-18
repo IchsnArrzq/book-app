@@ -52,7 +52,7 @@ class ApiBookController extends ApiController
      */
     public function update(Request $request, Book $book)
     {
-        $this->bookUpdate->execute($request->all());
+        $this->bookUpdate->execute([...$request->all(), 'id' => $book->id]);
         return $this->respond([
             'message' => 'success updating book',
         ]);
