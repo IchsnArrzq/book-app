@@ -18,10 +18,10 @@ class BookFactory extends Factory
     {
         return [
             'code' => str()->random(10),
-            'title' => fake()->name(),
+            'title' => fake()->safeColorName() . ' ' . fake()->word(),
             'publication_year' => fake()->year(),
             'writer' => fake()->name(),
-            'stock' => fake()->randomDigit(),
+            'stock' => rand(1, 10),
         ];
     }
 }

@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test Admin',
             'email' => 'admin@testing.com',
         ]);
-        \App\Models\Book::factory(100)->create();
-        \App\Models\Member::factory(100)->create();
+        \App\Models\Book::factory(1)->create();
+        \App\Models\Member::factory(4)->create();
     }
 }

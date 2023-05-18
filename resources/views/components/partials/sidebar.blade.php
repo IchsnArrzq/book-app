@@ -8,6 +8,8 @@
         </div>
     </div><span class="text-uppercase text-gray-600 text-xs mx-3 px-2 heading mb-2">Main</span>
     <ul class="list-unstyled">
+
+        {{-- admin --}}
         @if (Route::has('admin.books.index') && Auth::guard('admin')->check())
             <li class="sidebar-item {{ Route::is('admin.books.index') ? 'active' : '' }}">
                 <a class="sidebar-link" href="{{ route('admin.books.index') }}">
@@ -25,6 +27,38 @@
                         <use xlink:href="#user-1"> </use>
                     </svg>
                     <span>{{ __('Members Management') }}</span>
+                </a>
+            </li>
+        @endif
+        @if (Route::has('admin.loans.index') && Auth::guard('admin')->check())
+            <li class="sidebar-item {{ Route::is('admin.loans.index') ? 'active' : '' }}">
+                <a class="sidebar-link" href="{{ route('admin.loans.index') }}">
+                    <svg class="svg-icon svg-icon-sm svg-icon-heavy">
+                        <use xlink:href="#imac-screen-1"> </use>
+                    </svg>
+                    <span>{{ __('Loans Management') }}</span>
+                </a>
+            </li>
+        @endif
+
+        {{-- member --}}
+        @if (Route::has('member.books.index') && Auth::guard('member')->check())
+            <li class="sidebar-item {{ Route::is('member.books.index') ? 'active' : '' }}">
+                <a class="sidebar-link" href="{{ route('member.books.index') }}">
+                    <svg class="svg-icon svg-icon-sm svg-icon-heavy">
+                        <use xlink:href="#survey-1"> </use>
+                    </svg>
+                    <span>{{ __('Books List') }}</span>
+                </a>
+            </li>
+        @endif
+        @if (Route::has('member.loans.index') && Auth::guard('member')->check())
+            <li class="sidebar-item {{ Route::is('member.loans.index') ? 'active' : '' }}">
+                <a class="sidebar-link" href="{{ route('member.loans.index') }}">
+                    <svg class="svg-icon svg-icon-sm svg-icon-heavy">
+                        <use xlink:href="#imac-screen-1"> </use>
+                    </svg>
+                    <span>{{ __('Loans List') }}</span>
                 </a>
             </li>
         @endif

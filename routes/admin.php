@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Controllers\Admin\BookController;
-use App\Http\Controllers\Admin\MemberController;
+use App\Http\Controllers\Admin\{BookController, MemberController, LoanController};
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -17,5 +16,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
         Route::resource('books', BookController::class);
         Route::resource('members', MemberController::class);
+        Route::resource('loans', LoanController::class);
     });
 });

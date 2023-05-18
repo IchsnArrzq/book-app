@@ -23,10 +23,8 @@ class BooksDataTable extends DataTable
     {
         return (new EloquentDataTable($query))
             ->editColumn('action', function (Book $book) {
-                $route = route('admin.books.edit', $book->id);
                 return view('components.data-tables.button', [
                     'id' => $book->id,
-                    'route' => $route
                 ]);
             });
     }

@@ -23,10 +23,8 @@ class MembersDataTable extends DataTable
     {
         return (new EloquentDataTable($query))
             ->editColumn('action', function (Member $member) {
-                $route = route('admin.members.edit', $member->id);
                 return view('components.data-tables.button', [
                     'id' => $member->id,
-                    'route' => $route,
                 ]);
             });
     }
